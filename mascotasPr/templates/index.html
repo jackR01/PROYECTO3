@@ -1,0 +1,66 @@
+<!--Aqui hiria el layouts-->
+<div class="">
+    <div class="">
+
+        <!--aqui va el header-->
+        <header>
+        </header>
+        
+        <!--seccion-->
+        <div class="">
+            <form class="" method="post" action="">
+                <div class="">
+                    <input type="text">
+                    <div class="">
+                        <button class="" type="submit">
+                            <i class=""></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!--aqui se muestran los productos-->
+        <section>
+            <div>
+                <div>
+                    {%if entity%} {% for producto in entity%}
+                    <div>
+                        <!--aqui inicia la card-->
+                        <div class="card">
+                            <!--aqui va la imagen-->
+                            {% if producto.imagen %}
+                            <img src="" alt="">
+                            <!--aqui iria los detalles del producto-->
+                            {% load humanize %}
+                            <div class="body">
+                                <div class="text">
+                                    <!--nombre producto-->
+                                    <h5>{{ producto.nombre }}</h5>
+                                    <!--precio producto-->
+                                    Gs.{{producto.precio}}
+                                </div>
+                            </div>
+                            <!--agregar al carrito-->
+                            <div>
+                                <div class="text">
+                                    <a href="">ver detalle</a>{% if user.is_authenticated%}
+                                    <a href="" class="" type="button">
+                                        <i></i> Agregar al Carrito
+                                    </a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    {% endfor %} {% else %} 
+                    <div>
+                        <h3>no se encontraron Productos</h3>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+{% endblock %}
