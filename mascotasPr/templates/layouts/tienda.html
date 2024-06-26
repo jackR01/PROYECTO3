@@ -17,6 +17,90 @@
     <script src="{% static 'js/script.js' %}"></script>
 </head>
 <body>
-    
+    <!--navbar-->
+    <nav>
+        <div>
+            <!--aqui ponemos el logo-->
+            <div></div>
+            <div>
+                <ul>
+                    <li class="nav-item">
+                        <a href="">inicio</a>
+                    </li>
+
+                    <div class="dropdown show">
+                        <a href=""></a>
+                        <div class="dropdown-menu">
+                            {% for categoria in categorias %}
+                            <a href="dropdown-item">{{categoria.nombre}}</a> {% endfor %}
+                        </div>
+                    </div>
+
+                    {% if user.is_staff %}
+                    <li class="nav-item">
+                        <a class="nav-link activate" aria-current="page" href="">
+                            Listado Productos
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link activate" aria-current="page" href="">
+                            Listado Categorias
+                        </a>
+                    </li>
+                    {% endif %}
+
+                    <li class="nav-item">
+                        <a class="nav-link activate" aria-current="page" href="">
+                            Nosotros
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link activate" aria-current="page" href="">
+                            Contacto
+                        </a>
+                    </li>
+                </ul>
+                    {% if user.is_autenticated %}
+                    <!--si esta registrado-->
+                    {% load humanize %}
+                    <div>
+                        <a href=""></a>
+                    </div>
+                    <li class="nav-item">
+                        <a class="nav-link activate" aria-current="page" href="">
+                            <b>{{ user.username }}</b>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link activate" aria-current="page" href="{% url 'logout' %}">
+                            Cerrar Sesion
+                        </a>
+                    </li>
+                    {% else %}
+                    <!--si no esta registrado-->
+                    <li class="nav-item">
+                        <a class="nav-link activate" aria-current="page" href="/login">
+                            Ingresar
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link activate" aria-current="page" href="">
+                            Registrar
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>   
+        </div>
+    </nav>
+    <section class="container">
+        <!--contenido del layaut-->
+        {% block content%} {%endblock%}
+    </section>
+    <!--Footer-->
+    <footer>
+        
+    </footer>
 </body>
 </html>
