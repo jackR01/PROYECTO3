@@ -1,21 +1,38 @@
 {% extends 'layouts/tienda.html' %} {% load static %} {% block content %}
-<div class="">
+<div class="min-vh-100 d-flex flex-colum py-4">
     <div class="container">
-        <div class="">
-            <div class="card-header">
-                <div class="text-center">
-                    <h3 class="">Login</h3>
-                    <img src="{% static '' %}" width="50" heigth="50">
-                </div>
-                {% load crispy_forms_tags %} {{ form | crispy }}
-                <div class="card-body">
-                    <form method="post" action="">
-                        {% csrf_token %} 
+        <div class="col-lg-6 col-md-6 col-sm-4 mx-auto bg-dark text-white animate__animated animate__bounceInDown animate__delay-0.4s">
+            <div class="card">
+                <div class="card-body py-2">
+                    <form action="" method="POST">
+                        {% csrf_token %}
 
-                        <div class="text-center ">
-                            <button class="" type='submit'>Ingresar</button>
+                        {% if error %}
+                            <div class="alert alert-danger" role="alert">
+                                {{ error }}
+                            </div>
+                        {% endif %}
+
+                        <div class="mb-3">
+                            <label for="usuario" class="form-label">Usuario</label>
+                            <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Ingrese Usuario" required>
+                            <div class="invalid-feedback"> <!-- Agregado: Mensaje de retroalimentación para el usuario -->
+                                Por favor ingrese un usuario.
+                            </div>
                         </div>
-                    </form>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input type="password" name="password" id="password" class="form-control" placeholder="Ingrese Contraseña" required>
+                            <div class="invalid-feedback"> <!-- Agregado: Mensaje de retroalimentación para el usuario -->
+                                Por favor ingrese una contraseña.
+                            </div>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-danger">INICIAR SESIÓN</button>
+                        </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

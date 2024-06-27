@@ -8,7 +8,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     # paths de autenticacion
     path('registrar/', views.registrar, name='registrar'),
-    path('login/', LoginView.as_view(template_name='auth/login.html'), name='login'),
+    path('login/', views.login, name='login'),
 
     #paths del menu
     path('categorias/', views.listCategorias, name='categorias'),

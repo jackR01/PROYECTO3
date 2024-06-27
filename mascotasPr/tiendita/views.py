@@ -10,7 +10,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.views.generic import ListView, CreateView
 from django.db.models import Q
-from .forms import ConctactoForm, ProductoForm, CategoriaForm, CustomUserCreationForm
+from .forms import ConctactoForm, ProductoForm, CategoriaForm, CustomUserCreationForm, CustomAuthenticationForm
 
 
 # Create your views here.
@@ -233,6 +233,27 @@ def registrar(request):
             data['form'] = formulario
     
     return render(request, 'auth/registrar.html', data)
+
+def login_view(request):
+    if request.method == 'POST':
+        formulario = CustomAuthenticationForm(data=request.POST)
+        if formulario.is_valid():
+            username = formulario.cleaned_data.get('username')
+            password = formulario.cleaned_data.get('password')
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                profile = User.objects.get(username=username)
+                request.session['perfil'] = profile.role
+                login(request, user)
+                messages.success(request, 'Inicio de sesión exitoso')
+                return redirect('inicio')
+            else:
+                formulario.add_error(None, 'Usuario o contraseña incorrectos, intente nuevamente')
+    else:
+        formulario = CustomAuthenticationForm()
+    
+    return render(request, 'auth/login.html', {'form': formulario})
+
 
 
 # Acciones carrito
