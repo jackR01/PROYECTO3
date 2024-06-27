@@ -1,0 +1,25 @@
+{% extends 'layouts/tienda.html' %} {% block content %}
+<div class="">
+    <div class="container-fluid">
+        <h3 class="">MODIFICAR CATEGORIA</h3>
+
+        <div class="row">
+            <div class="">
+                {{ mensaje }} {% load crispy_forms_tags %}
+                <div class="card">
+                    <div class="">
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            <div class="">
+                                <a href="/categorias" class="">Cancelar</a>
+                                <button type="submit" class="">Modificar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
