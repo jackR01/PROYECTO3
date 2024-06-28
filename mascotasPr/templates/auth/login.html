@@ -7,11 +7,11 @@
                     <h3 class="">Login</h3>
                     <img src="{% static '' %}" width="50" heigth="50">
                 </div>
-                {% load crispy_forms_tags %} {{ form | crispy }}
+                
                 <div class="card-body">
                     <form method="post" action="">
-                        {% csrf_token %} 
-
+                        {% csrf_token %}
+                        {{ form.as_p }}
                         <div class="text-center ">
                             <button class="" type='submit'>Ingresar</button>
                         </div>

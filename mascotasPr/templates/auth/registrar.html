@@ -4,11 +4,10 @@
         <div class="col-lg-6 col-md-6 col-sm-4 mx-auto bg-dark text-white animate__animated animate__bounceInDown animate__delay-0.4s">
             <div class="card-header">
                 <h3 class="text-center">Registro de Usuarios</h3>
-                {% load crispy_forms_tags %}
                 <div class="card-body py-2">
-                    <form method="post" action="">
-                        {% csrf_token %} {{ form | crispy }}
-
+                    <form method="POST" action="">
+                        {% csrf_token %}
+                        {{ form.as_p }}
                         <div class="text-center pb-2">
                             <button class="btn btn-danger" type='submit'>Registrarse</button>
                         </div>
