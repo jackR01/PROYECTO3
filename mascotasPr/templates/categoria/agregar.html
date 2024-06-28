@@ -1,18 +1,18 @@
 {% extends 'layouts/tienda.html' %} {% block content %}
-<div class="">
+<div class="min-vh-100 d-flex flex-colum py-4">
     <div class="container">
-        <h3 class="">CATEGORIA</h3>
+        <h3 class="animate__animated animate__bounceInDown animate__delay-0.4s text-center my-3">CATEGORIA</h3>
 
         <div class="row">
-            <div class="">
+            <div class="col-sm-6 mx-auto animate__animated animate__bounceInUp animate__delay-0.5s">
                 {{ mensaje }} {% load crispy_forms_tags %}
                 <div class="card">
-                    <div class="">
+                    <div class="card body p-2">
                         <form action="" method="post">
-                            {% csrf_token %} {{ form | crispy }}
-                            <div class="">
-                                <a href="/categorias" class="">Cancelar</a>
-                                <button type="submit" class="">Agregar</button>
+                            {% csrf_token %} {{ form.as_p }}
+                            <div class="d-flex justify-content-end">
+                                <a href="/categorias" class="btn btn-secondary mt-2 mx-2">Cancelar</a>
+                                <button type="submit" class="btn btn-danger mt-2 mx-2">Agregar</button>
                             </div>
                         </form>
                     </div>
