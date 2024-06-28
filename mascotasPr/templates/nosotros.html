@@ -1,17 +1,21 @@
 {% extends 'layouts/tienda.html' %}{% load static %} {% block content %}
-<div class="">
+
+<div class="min-vh-100 d-flex flex-colum py-2">
     <div class="container">
-        <h3 class=""></h3>
-        <div class="row">
-            <div class="">
-                <p class="">
-                </p>
-                <p class="">
-                </p>
+        <h3 class="animate__animated animate__bounceInDown animate__delay-0.3s text-center py-4"></h3>
+        <div class="row py-auto">
+            <div class="col-lg-8">
+                <p class="animate__animated animate__backInRight animate__delay-0.3s text-justify"></p>
+                <p class="animate__animated animate__backInRight animate__delay-0.3s text-justify"></p>
             </div>
+
+            <div class="col-lg-4 animate__animated animate__bounceInUp animate__delay-0.4s ">
+                <img class="img-fluid ml-auto" src="{% static 'assets/' %}" alt="team">
+            </div>
+
         </div>
-        <div class="">
-            <p class="mb-1">Teléfono: </p>
+        <div class="row animate__animated animate__bounceInUp animate__delay-1s">
+            <p class="mb-1">Teléfono:</p>
         </div>
     </div>
 </div>

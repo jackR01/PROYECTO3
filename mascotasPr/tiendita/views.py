@@ -256,6 +256,7 @@ def login_view(request):
 
 
 
+
 # Acciones carrito
 def viewcart(request):
     return render(request, 'carrito/cart.html', {'carro': request.session['carro']})

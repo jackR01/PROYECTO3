@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path , include
 from . import views
 from django.contrib.auth.views import LoginView, LogoutView
 
@@ -8,13 +8,11 @@ urlpatterns = [
     path('', views.index, name='index'),
     # paths de autenticacion
     path('registrar/', views.registrar, name='registrar'),
-    path('login/', views.login, name='login'),
+    path('login/', LoginView.as_view(template_name='auth/login.html'), name='login'),
+    path('accounts/', include('django.contrib.auth.urls')),
 
     #paths del menu
     path('categorias/', views.listCategorias, name='categorias'),
-    path('contacto/', views.contacto, name='contacto'),
-    path('garantia/', views.garantia, name='garantia'),
-    path('devoluciones/', views.devoluciones, name='devoluciones'),
     path('nosotros/', views.nosotros, name='nosotros'),
 
     #paths edicion de productos
