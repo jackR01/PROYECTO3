@@ -235,6 +235,7 @@ def registrar(request):
     return render(request, 'auth/registrar.html', data)
 
 
+
 # Acciones carrito
 def viewcart(request):
     return render(request, 'carrito/cart.html', {'carro': request.session['carro']})

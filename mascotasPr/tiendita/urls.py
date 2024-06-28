@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path , include
 from . import views
 from django.contrib.auth.views import LoginView, LogoutView
 
@@ -9,6 +9,7 @@ urlpatterns = [
     # paths de autenticacion
     path('registrar/', views.registrar, name='registrar'),
     path('login/', LoginView.as_view(template_name='auth/login.html'), name='login'),
+    path('accounts/', include('django.contrib.auth.urls')),
 
     #paths del menu
     path('categorias/', views.listCategorias, name='categorias'),
