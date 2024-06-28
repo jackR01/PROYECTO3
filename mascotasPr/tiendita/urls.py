@@ -13,9 +13,6 @@ urlpatterns = [
 
     #paths del menu
     path('categorias/', views.listCategorias, name='categorias'),
-    path('contacto/', views.contacto, name='contacto'),
-    path('garantia/', views.garantia, name='garantia'),
-    path('devoluciones/', views.devoluciones, name='devoluciones'),
     path('nosotros/', views.nosotros, name='nosotros'),
 
     #paths edicion de productos
