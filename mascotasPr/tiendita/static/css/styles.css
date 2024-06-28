@@ -72,10 +72,16 @@ body {
   bottom: 1px;
   right: 1px;
   z-index: 100;
+  transition: transform 0.3s ease-in-out;
+}
+
+.transparent-button:hover {
+  transform: scale(1.1);
 }
 
 .subirCon-perrito {
   font-style: italic;
+  
 }
 
 .subirCon-perrito:hover {
@@ -656,14 +662,18 @@ progress {
 }
 
 .img-fluid {
+  border-radius: 10px;
+}
+
+.img-fluido {
   max-width: 100%;
   height: auto;
   transition: transform 0.3s ease-in-out;
 }
 
-.img-fluid:hover {
+.img-fluido:hover {
   content: url('/static/assets/logito-hover.png'); /* Cambia la imagen al pasar el mouse */
-  transform: scale(1.1); /* Opcional: Aumenta ligeramente el tamaño de la imagen */
+  transform: scale(1.1); /* Aumenta ligeramente el tamaño de la imagen */
 }
 
 .img-thumbnail {
