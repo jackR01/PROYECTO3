@@ -102,6 +102,19 @@ body {
 }
 */
 
+
+.cajita1 
+{
+    color: rgb(255, 255, 255);
+    background-color: rgba(73, 53, 33, 0.9);
+    padding: 16px;
+    box-shadow: currentcolor 0px 0px 0px 1px;
+    border-radius: 12px;
+    margin: 10% 5% 5%;
+    display: inline-block;
+    width: 35vw;
+}
+
 hr {
   margin: 1rem 0;
   color: inherit;
