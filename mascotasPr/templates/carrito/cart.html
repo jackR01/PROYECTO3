@@ -39,7 +39,7 @@
                                         <a class="btn btn-secondary btn-sm" href="{% url 'tiendita:restarcart' value.producto_id %}" type="button"><i class="bi bi-dash"></i> </a>
                                     </td>
 
-                                    <td class="text-center">Gs.{{ value.precio }} </td>
+                                    <td class="text-center">${{ value.precio }} </td>
                                     <td class="text-center">
                                         <a class="btn btn-secondary btn-sm" href="{% url 'tiendita:delcart' value.producto_id %}" type="button"><i class="bi bi-trash"></i></a>
                                     </td>

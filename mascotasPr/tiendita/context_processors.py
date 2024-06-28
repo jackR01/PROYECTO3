@@ -9,5 +9,5 @@ def importe_total_carro(request):
     if request.user.is_authenticated:
         if "carro" in request.session:
             for key, value in request.session["carro"].items():
-                total = total + int(value["precio"]) * int(value["cantidad"])
+                total = total + int(value["precio"])
     return {"importe_total_carro": total}
