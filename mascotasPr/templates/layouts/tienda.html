@@ -23,6 +23,9 @@
 
     <!-- Core theme JS-->
     <script src="{% static 'js/scripts.js' %}"></script>
+    <script>
+        const toTop = () => window.scrollTo({top: 0, behavior: 'smooth'});
+    </script>
 </head>
 
 <body>
@@ -120,7 +123,10 @@
     </section>
 
     <!-- boton volver al principio(top) de la pagina -->
-    <img src="{% static 'assets/perrito-sube.png' %}" alt="click para subir" onclick="toTop()">
+    <button class="transparent-button" onclick="toTop()">
+        <img src="{% static 'assets/sube-perrito.png' %}" alt="click para subir" height="30%" width="30%">
+        <h5 class="subirCon-perrito">Click para subir al inicio!</h5>
+    </button>
 
             </ul>
             <ul class="col-4 list-unstyled text-center mx-auto my-auto">

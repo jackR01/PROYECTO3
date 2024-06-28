@@ -63,6 +63,26 @@ body {
   background-image: url('/static/assets/background.jpg');
 }
 
+.transparent-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  bottom: 1px;
+  right: 1px;
+  z-index: 100;
+}
+
+.subirCon-perrito {
+  font-style: italic;
+}
+
+.subirCon-perrito:hover {
+  text-decoration: underline;
+}
+
+
 /*
 .decoracion 
 {
