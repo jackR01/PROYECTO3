@@ -34,14 +34,14 @@
                                     {% load bootstrap_icons %}
                                     <td class="text-center" colspan="3">
                                         {{ value.cantidad }}
-                                        <a href="{% url 'tienda:addcart' value.producto_id %}" class="btn btn-secondary btn-sm" type="button"><i class="bi bi-plus"></i></a>
+                                        <a href="{% url 'tiendita:addcart' value.producto_id %}" class="btn btn-secondary btn-sm" type="button"><i class="bi bi-plus"></i></a>
 
-                                        <a class="btn btn-secondary btn-sm" href="{% url 'tienda:restarcart' value.producto_id %}" type="button"><i class="bi bi-dash"></i> </a>
+                                        <a class="btn btn-secondary btn-sm" href="{% url 'tiendita:restarcart' value.producto_id %}" type="button"><i class="bi bi-dash"></i> </a>
                                     </td>
 
                                     <td class="text-center">Gs.{{ value.precio }} </td>
                                     <td class="text-center">
-                                        <a class="btn btn-secondary btn-sm" href="{% url 'tienda:delcart' value.producto_id %}" type="button"><i class="bi bi-trash"></i></a>
+                                        <a class="btn btn-secondary btn-sm" href="{% url 'tiendita:delcart' value.producto_id %}" type="button"><i class="bi bi-trash"></i></a>
                                     </td>
                                 </tr>
                                 {% endfor %} {% else %}
