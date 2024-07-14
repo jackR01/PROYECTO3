@@ -95,9 +95,10 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'logout' %}">
-                                    Cerrar Sesión
-                            </a>
+                        <form class="d-flex" method="post" action="{% url 'logout' %}">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-outline-dark flex-shrink-0">Cerrar sesión</button>
+                        </form>
                     </li>
                     {% else %}
                     <!-- Si no está autenticado mostrar -->

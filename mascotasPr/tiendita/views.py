@@ -6,9 +6,8 @@ from django.core.paginator import Paginator
 from django.http import Http404
 from django.contrib.auth import logout, login, authenticate
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.views import LogoutView
 from django.contrib import messages
-from django.views.generic import ListView, CreateView
 from django.db.models import Q
 from .forms import ConctactoForm, ProductoForm, CategoriaForm, CustomUserCreationForm, CustomAuthenticationForm
 
@@ -254,6 +253,10 @@ def login_view(request):
     
     return render(request, 'auth/login.html', {'form': formulario})
 
+class CustomLogoutView(LogoutView):
+    def get(self, request, *args, **kwargs):
+        messages.success(request, 'Has cerrado sesión exitosamente')
+        return redirect('index') 
 
 
 
