@@ -1,5 +1,6 @@
-{% extends 'layouts/tienda.html' %} {% block content %}
-<div class="min-vh-100 d-flex flex-colum py-4">
+{% extends 'layouts/tienda.html' %} 
+{% block content %}
+<div class="min-vh-100 d-flex flex-column py-4">
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-8 mx-auto animate__animated animate__backInRight animate__delay-0.5s mt-3">
@@ -10,8 +11,8 @@
                         <form action="" method="post" enctype="multipart/form-data">
                             {% csrf_token %} {{ form.as_p }}
                             <div class="d-flex justify-content-end">
-                                <a href="/listarproductos" class="btn btn-secondary mt-2 mx-2" button ">Cancelar</a>
-                        <button type="submit " class="btn btn-danger mt-2 mx-2 " button ">Agregar</a>
+                                <a href="/listarproductos" class="btn btn-secondary mt-2 mx-2">Cancelar</a>
+                                <button type="submit" class="btn btn-danger mt-2 mx-2">Agregar</button>
                             </div>
                         </form>
                     </div>
@@ -19,6 +20,5 @@
             </div>
         </div>
     </div>
-
 </div>
 {% endblock %}
